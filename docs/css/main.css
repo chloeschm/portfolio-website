@@ -150,20 +150,56 @@ header {
     transition: all 0.3s ease;
 }
 
+.gif-container a {
+    display: block;
+    width: 420px;             
+    height: 238px;            
+    position: relative;
+    overflow: hidden;
+}
+
+.gif-container img,
+.gif-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background-color: black;
+}
+
 .project-row:hover .gif-container {
     outline: 3px solid #39ff14;
     box-shadow: 0 0 20px #39ff14;
 }
 
+.project-row {
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.project-row > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .project-title {
-    position: absolute;
-    left: 140px;
-    bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px; 
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translateY(-12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
     pointer-events: none;
-    text-align: left;
-    z-index: 100;
+}
+
+.project-row:hover .project-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-row:hover .project-title {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-title h3 {
@@ -175,11 +211,6 @@ header {
     font-size: 1.2rem;
 }
 
-.project-row:hover .project-title {
-    opacity: 1;
-}
-
-/* Utility Classes for Tailwind-like functionality */
 .relative {
     position: relative;
 }
@@ -245,7 +276,6 @@ header {
     transition: opacity 0.3s ease;
 }
 
-/* Hover effects */
 @media (min-width: 640px) {
     .group\/img:hover .sm\:group-hover\:brightness-100 {
         filter: brightness(1) grayscale(0%);
@@ -260,7 +290,6 @@ header {
     }
 }
 
-/* Mobile focus effects */
 .group\/img:focus .mobile\:group-focus\:brightness-100 {
     filter: brightness(1) grayscale(0%);
 }
@@ -271,4 +300,9 @@ header {
 
 .group\/img:focus .mobile\:group-focus\:opacity-100 {
     opacity: 1;
+}
+
+/* video */
+video {
+    pointer-events: none;
 }
